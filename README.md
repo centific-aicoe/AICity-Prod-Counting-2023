@@ -90,11 +90,8 @@ output of the previous step (Creation of Object Detection Dataset)
 ![data_generate_output_structure.png](assets/data_generate_output_structure.png)
 
 2. **output_dir** - The folder path where files would be saved as per yolov5 structure
-
 3. **train_ratio** - Percentage of data to be used for training
-
 4. **valid_ratio** - Percentage of data to be used for validation
-
 5. **test_ratio** - Percentage of data to be used for test
 
 After executing the code, you will see the following folders & files in the **output_dir**
@@ -119,7 +116,5 @@ There are three arguments that are needed for this script
 ![test_dir_structure.png](assets/test_dir_structure.png)
 
 **Note**: _The file video_id.txt is also consumed by the code. It is expected to be present in the same directory as videos_
-
 2. **model_path** - Path of the model file to be used.model weights used to generate best leaderboard submission are placed at ./model_weights/best.pt
-
 3. **output_dir** - Path to the directory where output file along with the inference videos would be written
