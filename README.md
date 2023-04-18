@@ -7,8 +7,8 @@ There are 4 major sections in this markdown
 3. [Model Training](#model-training)
 4. [Inference](#inference)
 
-If you want to replicate the leaderboard submission, create an environment as per instructions in Environment section
-and execute instructions in Inference section.
+If you want to replicate the leaderboard submission, create an environment as per instructions 
+in [Environment Creation](#environment-creation) and follow instructions in [Inference](#inference).
 
 For any other steps, look at the relevant section.
 
