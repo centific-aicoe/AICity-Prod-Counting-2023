@@ -3,9 +3,9 @@ This repo contains the code which is part of submission by team Centific for Tra
 
 There are 4 major sections in this markdown
 1. [Environment Creation](#environment-creation)
-2. Data Preparation
-3. Model Training
-4. Inference
+2. [Data Preparation](#data-preparation)
+3. [Model Training](#model-training)
+4. [Inference](#inference)
 
 If you want to replicate the leaderboard submission, create an environment as per instructions in Environment section
 and execute instructions in Inference section.
