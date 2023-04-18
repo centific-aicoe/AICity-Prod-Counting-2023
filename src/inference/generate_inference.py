@@ -4,6 +4,7 @@ import cv2
 
 # Adding working directory to path to run the files as standalone
 import pandas as pd
+import argparse
 
 curr_wd = os.getcwd()
 if curr_wd not in sys.path:
@@ -184,7 +185,51 @@ def create_inference_info(videofile_path, model_path, output_dir, req_num_frames
         return pd.DataFrame()
 
 
-videofile_path = '/Users/anudeep/Desktop/AI_city_challenge/AIC23_Track4_Automated_Checkout/testA/testA_2.mp4'
-model_path = "/Users/anudeep/Desktop/AI_city_challenge/first_cut_model_9thMarch/best.pt"
-req_num_frames = -1
-output_dir = "/Users/anudeep/Desktop/AI_city_challenge/submissions/best_results_replication"
+def parse_args():
+    parser = argparse.ArgumentParser(description="Generate data frame with the inference results for a given video")
+    parser.add_argument('--videofile_path',
+                        type=str,
+                        help='Path of the video file',
+                        required=True)
+    parser.add_argument('--model_path',
+                        type=str,
+                        default="./model_weights/best.pt",
+                        help='Path of the model weights to be used')
+    parser.add_argument('--output_dir',
+                        type=str,
+                        help='Folder where output inference video would be saved',
+                        required=True)
+    args = parser.parse_args()
+    return args
+
+
+if __name__ == '__main__':
+    # videofile_path = '/Users/anudeep/Desktop/AI_city_challenge/AIC23_Track4_Automated_Checkout/testA/testA_2.mp4'
+    # model_path = "/Users/anudeep/Desktop/AI_city_challenge/first_cut_model_9thMarch/best.pt"
+    # req_num_frames = -1
+    # output_dir = "/Users/anudeep/Desktop/AI_city_challenge/submissions/best_results_replication"
+
+    # Reading the arguments
+    args = parse_args()
+    videofile_path = args.videofile_path
+    model_path = args.model_path
+    output_dir = args.output_dir
+
+    print("-"*75)
+    print("Input parameters being used are shown below")
+    print("videofile_path: ", videofile_path)
+    print("model_path: ", model_path)
+    print("output_dir: ", output_dir)
+    print("-"*75)
+
+    # Function call
+    tmp_df1 = create_inference_info(videofile_path, model_path, output_dir, req_num_frames=-1)
+
+    # CSV File name
+    tmp_filename = os.path.basename(videofile_path)
+    out_csv_filename = "out" + "_" + tmp_filename.replace(".mp4", ".csv")
+    out_csv_filepath = os.path.join(output_dir, out_csv_filename)
+    print(f"Saving output to file {out_csv_filepath}")
+
+    # Write to csv
+    tmp_df1.to_csv(out_csv_filepath, index=False)
