@@ -81,6 +81,8 @@ To prepare the data which is ready for Yolov5 custom training, execute the comma
 python python src/data_prep/create_yolo_data_folders.py --input_dir <input_dir> --output_dir <output_dir> \
                                                         --train_ratio 0.7 --valid_ratio 0.15 --test_ratio 0.15
 ```
+Few arguments are hardcoded in the above command. Those were the data preparation parameters we used.
+
 There are 5 arguments that are needed to run the above script. 
 Details of arguments are given below
 1. **input_dir** - The folder path which contains the object detection data. This will be the 
@@ -89,9 +91,9 @@ output of the previous step (Creation of Object Detection Dataset)
 ![data_generate_output_structure.png](assets/data_generate_output_structure.png)
 
 2. **output_dir** - The folder path where files would be saved as per yolov5 structure
-3. **train_ratio** - Percentage of data to be used for training
-4. **valid_ratio** - Percentage of data to be used for validation
-5. **test_ratio** - Percentage of data to be used for test
+3. **train_ratio** - Percentage of data to be used for training. We used 0.7 for our training
+4. **valid_ratio** - Percentage of data to be used for validation. We used 0.15 for our training
+5. **test_ratio** - Percentage of data to be used for test. We used 0.15 for our training
 
 After executing the code, you will see the following folders & files in the **output_dir**
 
@@ -100,6 +102,35 @@ After executing the code, you will see the following folders & files in the **ou
 The folder path **output_dir** in this step will be used for yolov5 custom model training. 
 
 ## Model Training
+After yolov5 dataset structure is created as per above step, We can trigger model training using the 
+code below
+
+First, you need to cd to yolov5 directory using the command below
+
+```bash
+cd yolov5
+```
+
+Trigger the training job by executing the command below
+```bash
+python train.py --img 640 --batch-size 16 --weights yolov5m.pt --epochs 70 \
+                --device 0 --name aicity --input_dir <input_dir>
+```
+Few arguments are hardcoded in the above command. Those were our final model training parameters.
+
+There are 7 arguments that are needed to run the above script. 
+Details of arguments are given below
+1. **img** - Image size
+2. **batch_size** - batch size
+3. **weights** - pretrained Model weights
+4. **epochs** - Number of epochs for training
+5. **device** - pass 0 to use the GPU device
+6. **name** - name of the project
+7. **input_dir** - Folder path of the input directory which contains data in structure required 
+by Yolov5 as shown below
+This will be the output of the previous step (Creation of dataset for Yolov5 training) 
+
+![yolo_folder_structure.png](assets/yolo_folder_structure.png)
 
 ## Inference
 In order to replicate the leaderboard performance for test set A, execute the code as shown below
