@@ -50,10 +50,12 @@ python src/data_prep/create_synth_detection_data.py --data_dir <data_dir> --back
 There are 4 arguments that are needed to run the above script. 
 Details of arguments are given below
 1. **data_dir** - The directory which has the raw data. This directory should two folders named **train** and **segmentation_labels** and file named **label.txt** as shown below
-
 ![dataset_folder.png](assets/dataset_folder.png)
+
 2. **background_path** - This directory should contain the background files that need to be used
+
 3. **out_dir** - The path where object detection dataset would be saved
+
 4. **dontocclude** - This argument will ensure to paste products on the background so that they are not fully occluded
 
 After executing the code, you will see the following folders & files  in the **out_dir**
@@ -78,8 +80,11 @@ output of the previous step (Creation of Object Detection Dataset)
 ![data_generate_output_structure.png](assets/data_generate_output_structure.png)
 
 2. **output_dir** - The folder path where files would be saved as per yolov5 structure
+
 3. **train_ratio** - Percentage of data to be used for training
+
 4. **valid_ratio** - Percentage of data to be used for validation
+
 5. **test_ratio** - Percentage of data to be used for test
 
 After executing the code, you will see the following folders & files in the **output_dir**
