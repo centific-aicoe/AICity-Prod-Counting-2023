@@ -51,7 +51,7 @@ We have developed a code to use these product images and segmentation masks and 
 an object detection dataset.
 
 For every image in object detection dataset, a background image is required. This is sampled from
-sample from 3 backgrounds from this [folder](datasets/backgrounds)
+sample from 3 backgrounds from this [folder](./backgrounds)
 
 In order to generate the object detection dataset, execute the command below
 ```bash
