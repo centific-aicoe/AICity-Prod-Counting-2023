@@ -16,16 +16,16 @@ For any other steps, look at the relevant section.
 In order to create an environment to execute all the codes, run the commands below
 
 #### Create a virtualenv environment
-The below command will create a folder named **venv** in the current directory which will have the environment
+The below command will create a conda environment
 
 ```bash
-python3 -m venv venv
+conda create -n aicity python=3.8
 ```
 
 #### Activate the environment
 The command below will activate the created environment in above step
 ```bash
-source venv/bin/activate
+conda activate aicity
 ```
 
 ### Install the packages
