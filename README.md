@@ -2,7 +2,7 @@
 This repo contains the code which is part of submission by team Centific for Track-4 AI City Challenge, 2023.
 
 There are 4 major sections in this markdown
-1. Environment Creation
+1. [Environment Creation](#environment-creation)
 2. Data Preparation
 3. Model Training
 4. Inference
