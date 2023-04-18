@@ -8,7 +8,7 @@ In order to create an environment to execute all the codes, run the commands bel
 The below command will create a folder named **venv** in the current directory which will have the environment
 
 ```bash
-python3 -m venv ./venv
+python3 -m venv venv
 ```
 
 #### Activate the environment
