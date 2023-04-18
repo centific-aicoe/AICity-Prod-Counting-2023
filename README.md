@@ -1,6 +1,16 @@
 # AICity-Prod-Counting-2023
 This repo contains the code which is part of submission by team Centific for Track-4 AI City Challenge, 2023.
-Clone the repo, navigate to the directory and follow the steps mentioned below
+
+There are 4 major sections in this markdown
+1. Environment Creation
+2. Data Preparation
+3. Model Training
+4. Inference
+
+If you want to replicate the leaderboard submission, create an environment as per instructions in Environment section
+and execute instructions in Inference section.
+
+For any other steps, look at the relevant section.
 
 ## Environment creation
 In order to create an environment to execute all the codes, run the commands below
