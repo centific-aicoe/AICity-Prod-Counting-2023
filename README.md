@@ -103,7 +103,7 @@ After executing the code, you will see the following folders & files in the **ou
 
 The folder path **output_dir** in this step will be used for yolov5 custom model training. 
 
-## Training
+## Model Training
 
 ## Inference
 In order to replicate the leaderboard performance for test set A, execute the code as shown below
