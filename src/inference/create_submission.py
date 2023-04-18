@@ -2,6 +2,7 @@ import os
 import sys
 import glob
 import time
+import argparse
 
 curr_wd = os.getcwd()
 if curr_wd not in sys.path:
@@ -57,10 +58,44 @@ def prepare_submission(test_set_dir, model_path, output_dir):
         print(f"Time taken for processing {req_base_filename} is {int((end-start)/60)} minutes")
 
 
+def parse_args():
+    parser = argparse.ArgumentParser(description="Create submission for a given set of videos")
+    parser.add_argument('--test_set_dir',
+                        type=str,
+                        help='Folder which contains videos and video_id.txt file similar to testA dataset',
+                        required=True)
+    parser.add_argument('--model_path',
+                        type=str,
+                        default="./model_weights/best.pt",
+                        help='Path of the model weights to be used')
+    parser.add_argument('--output_dir',
+                        type=str,
+                        help='Folder where output inference videos and submission file would be saved',
+                        required=True)
+    args = parser.parse_args()
+    return args
+
+
 if __name__ == '__main__':
-    test_set_dir = "/Users/anudeep/Desktop/AI_city_challenge/AIC23_Track4_Automated_Checkout/testA"
-    model_path = "/Users/anudeep/Desktop/AI_city_challenge/first_cut_model_9thMarch/best.pt"
-    output_dir = "/Users/anudeep/Desktop/AI_city_challenge/submissions/results_replication_full"
+    # test_set_dir = "/Users/anudeep/Desktop/AI_city_challenge/AIC23_Track4_Automated_Checkout/testA"
+    # model_path = "/Users/anudeep/Desktop/AI_city_challenge/first_cut_model_9thMarch/best.pt"
+    # output_dir = "/Users/anudeep/Desktop/AI_city_challenge/submissions/results_replication_full"
+
+    # Reading the arguments
+    args = parse_args()
+    test_set_dir = args.test_set_dir
+    model_path = args.model_path
+    output_dir = args.output_dir
+
+    print("-"*75)
+    print("Input parameters being used are shown below")
+    print("test_set_dir: ", test_set_dir)
+    print("model_path: ", model_path)
+    print("output_dir: ", output_dir)
+    print("-"*75)
+
+    # Function call
+    prepare_submission(test_set_dir, model_path, output_dir)
 
 
 
