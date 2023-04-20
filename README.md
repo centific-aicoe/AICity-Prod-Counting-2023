@@ -59,7 +59,7 @@ python src/data_prep/create_synth_detection_data.py --data_dir <data_dir> --back
 ```
 There are 4 arguments that are needed to run the above script. 
 Details of arguments are given below
-1. **data_dir** - The directory which has the raw data. This directory should two folders named **train** and **segmentation_labels** and file named **label.txt** as shown below
+1. **data_dir** - The directory which has the raw data. This directory should contain two folders named **train** and **segmentation_labels** and file named **label.txt** as shown below
 
 ![dataset_folder.png](assets/dataset_folder.png)
 
@@ -78,7 +78,7 @@ This section explains the steps for the same.
 
 To prepare the data which is ready for Yolov5 custom training, execute the command below
 ```bash
-python python src/data_prep/create_yolo_data_folders.py --input_dir <input_dir> --output_dir <output_dir> \
+python src/data_prep/create_yolo_data_folders.py --input_dir <input_dir> --output_dir <output_dir> \
                                                         --train_ratio 0.7 --valid_ratio 0.15 --test_ratio 0.15
 ```
 Few arguments are hardcoded in the above command. Those were the data preparation parameters we used.
@@ -114,7 +114,7 @@ cd yolov5
 Trigger the training job by executing the command below
 ```bash
 python train.py --img 640 --batch-size 16 --weights yolov5m.pt --epochs 70 \
-                --device 0 --name aicity --input_dir <input_dir>
+                --device cpu --name aicity --input_dir <input_dir>
 ```
 Few arguments are hardcoded in the above command. Those were our final model training parameters.
 
@@ -124,13 +124,17 @@ Details of arguments are given below
 2. **batch_size** - batch size
 3. **weights** - pretrained Model weights
 4. **epochs** - Number of epochs for training
-5. **device** - pass 0 to use the GPU device
+5. **device** - use cpu if the machine on which you run doesn't have a gpu else use 0
 6. **name** - name of the project
 7. **input_dir** - Folder path of the input directory which contains data in structure required 
 by Yolov5 as shown below
 This will be the output of the previous step (Creation of dataset for Yolov5 training) 
 
 ![yolo_folder_structure.png](assets/yolo_folder_structure.png)
+
+After executing the code, you will be able to view the results inside yolov5 folder as shown below
+
+![train_output_folder_structure.png](assets/train_output_folder_structure.png)
 
 ## Inference
 In order to replicate the leaderboard performance for test set A, execute the code as shown below
