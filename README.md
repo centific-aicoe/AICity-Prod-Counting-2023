@@ -15,7 +15,7 @@ For any other steps, look at the relevant section.
 ## Environment creation
 In order to create an environment to execute all the codes, run the commands below
 
-#### Create a virtualenv environment
+#### Create a virtual environment
 The below command will create a conda environment
 
 ```bash
