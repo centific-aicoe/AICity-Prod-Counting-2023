@@ -7,7 +7,7 @@ There are 4 major sections in this markdown
 3. [Model Training](#model-training)
 4. [Inference](#inference)
 
-If you want to replicate the leaderboard submission, create an environment as per instructions 
+If you want to replicate the leaderboard submission/inference on new test set, create an environment as per instructions 
 in [Environment Creation](#environment-creation) and follow instructions in [Inference](#inference).
 
 For any other steps, look at the relevant section.
@@ -158,3 +158,14 @@ There are three arguments that are needed for this script
 After execution the code, you will see the following files in the **output_dir**
 
 ![inference_output_folder_structure.png](assets/inference_output_folder_structure.png)
+
+**Execute on new test set**
+
+If you want to run on a new reserved test set, you can place all the videos in a folder
+and add a text file **video_id.txt** to the folder which has serial no and name of the video file
+as shown below
+
+![reserve_set_input.png](assets/reserve_set_input.png)
+
+This folder can be passed as argument to inference code src/inference/create_submission.py and executed
+to get the results on the new test set in a **submission.txt** file
