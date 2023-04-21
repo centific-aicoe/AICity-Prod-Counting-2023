@@ -124,7 +124,7 @@ Details of arguments are given below
 2. **batch_size** - batch size
 3. **weights** - pretrained Model weights
 4. **epochs** - Number of epochs for training
-5. **device** - use cpu if the machine on which you run doesn't have a gpu else use 0
+5. **device** - use cpu if the machine on which you run doesn't have a GPU, else use 0
 6. **name** - name of the project
 7. **input_dir** - Folder path of the input directory which contains data in structure required 
 by Yolov5 as shown below
@@ -152,3 +152,7 @@ There are three arguments that are needed for this script
 
 2. **model_path** - Path of the model file to be used.model weights used to generate best leaderboard submission are placed at ./model_weights/best.pt
 3. **output_dir** - Path to the directory where output file along with the inference videos would be written
+
+After execution the code, you will see the following files in the **output_dir**
+
+![inference_output_folder_structure.png](assets/inference_output_folder_structure.png)
