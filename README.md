@@ -167,5 +167,6 @@ as shown below
 
 ![reserve_set_input.png](assets/reserve_set_input.png)
 
-This folder can be passed as argument to inference code src/inference/create_submission.py and executed
-to get the results on the new test set in a **submission.txt** file
+This folder can be passed as argument **test_set_dir** to inference code src/inference/create_submission.py
+as explained in [Inference](#inference) and executed to get the results on
+the new test set in a **submission.txt** file
