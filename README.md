@@ -160,6 +160,7 @@ After execution the code, you will see the following files in the **output_dir**
 ![inference_output_folder_structure.png](assets/inference_output_folder_structure.png)
 
 **Execute on new test set**
+
 If you want to run on a new reserved test set, you can place all the videos in a folder
 and add a text file **video_id.txt** to the folder which has serial no and name of the video file
 as shown below
