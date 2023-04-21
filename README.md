@@ -136,6 +136,8 @@ After executing the code, you will be able to view the results inside yolov5 fol
 
 ![train_output_folder_structure.png](assets/train_output_folder_structure.png)
 
+The best model would be available in the **weights folder** saved as **best.pt**
+
 ## Inference
 In order to replicate the leaderboard performance for test set A, execute the code as shown below
 
