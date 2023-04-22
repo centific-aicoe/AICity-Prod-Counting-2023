@@ -131,7 +131,7 @@ Trigger the training job by executing the command below
 python train.py --img 640 --batch-size 16 --weights yolov5m.pt --epochs 70 \
                 --device 0 --name aicity --input_dir ../datasets/yolo_data
 ```
-**_Pass the argument for device as 0 if you have GPU else use cpu**_
+Note: Pass the argument for **device** as **0** if you have GPU else use **cpu**
 
 After executing the code, you will be able to view the results inside yolov5 folder as shown below
 
