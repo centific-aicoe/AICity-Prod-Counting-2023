@@ -77,7 +77,8 @@ After executing the code, you will see the following folders & files  in the **o
 ![data_generate_output_structure.png](assets/data_generate_output_structure.png)
 
 ### Creation of dataset for Yolov5 training
-After the objection detection dataset is created as per the above step, We 
+After the objection detection dataset is created as per the
+step [Creation of Object Detection Dataset](#creation-of-object-detection-dataset), We 
 need to prepare the data in a folder structure which is compatible for Yolov5 training.
 This section explains the steps for the same.
 
