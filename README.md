@@ -170,3 +170,6 @@ as shown below
 This folder can be passed as argument **test_set_dir** to inference code src/inference/create_submission.py
 as explained in [Inference](#inference) and executed to get the results on
 the new test set in a **submission.txt** file
+
+## Contact
+If you have any questions, feel free to contact Anudeep Dhonde [anudeep.dhonde@centific.com](mailto:anudeep.dhonde@centific.com)
