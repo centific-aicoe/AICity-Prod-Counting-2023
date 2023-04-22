@@ -10,6 +10,11 @@ There are 4 major sections in this markdown
 If you want to replicate the leaderboard submission/inference on new test set, create an environment as per instructions 
 in [Environment Creation](#environment-creation) and follow instructions in [Inference](#inference).
 
+In order to replicate our training results, create an environment as per instructions in
+[Environment Creation](#environment-creation) and then head directly to [Direct Training](#direct-training)
+
+If you want to understand and test the code validity of the whole process, run through all the sections in order.
+
 For any other steps, look at the relevant section.
 
 ## Environment creation
@@ -102,7 +107,41 @@ After executing the code, you will see the following folders & files in the **ou
 The folder path **output_dir** in this step will be used for yolov5 custom model training. 
 
 ## Model Training
-After yolov5 dataset structure is created as per above step, We can trigger model training using the 
+If you want to replicate our training results, follow [Direct Training](#direct-training) section
+
+If you are testing the whole code process and ran the all the steps in sequence, follow [Train Model](#train-model)
+
+### Direct Training
+If you want to directly run training process, download the yolo_data from
+[link](https://drive.google.com/file/d/1Vsn0Og-cpM-cPp1ptBrWHmbwBUdwcNoO/view?usp=sharing) 
+and place the file in **datasets** folder.
+
+Unzip the file **yolo_data.zip** and after that the folder should look like below
+
+![yolov5_direct_train.png](assets/yolov5_direct_train.png)
+
+In order to execute the code, first you need to cd to yolov5 directory using the command below
+
+```bash
+cd yolov5
+```
+
+Trigger the training job by executing the command below
+```bash
+python train.py --img 640 --batch-size 16 --weights yolov5m.pt --epochs 70 \
+                --device 0 --name aicity --input_dir ../datasets/yolo_data
+```
+**_Pass the argument for device as 0 if you have GPU else use cpu**_
+
+After executing the code, you will be able to view the results inside yolov5 folder as shown below
+
+![train_output_folder_structure.png](assets/train_output_folder_structure.png)
+
+The best model would be available in the **weights folder** saved as **best.pt**
+
+### Train Model
+After yolov5 dataset structure is created as per step 
+[Creation of dataset for Yolov5 training](#creation-of-dataset-for-yolov5-training), We can trigger model training using the 
 code below
 
 First, you need to cd to yolov5 directory using the command below

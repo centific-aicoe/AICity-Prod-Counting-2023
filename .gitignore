@@ -131,3 +131,19 @@ dmypy.json
 .DS_Store
 
 .idea
+
+datasets/yolo_data
+datasets/yolo_data.zip
+
+datasets/simple_paste_synthetic_data
+datasets/simple_paste_synthetic_data.zip
+
+# Adding logs and outputs folder
+logs
+outputs
+
+# Excluding mlflow folders
+mlruns
+mlartifacts
+
+yolov5/runs
